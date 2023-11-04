@@ -6,7 +6,6 @@ export const fetchData = createAsyncThunk(
 
     const queryParams = [];
 
-    // Include category in the request URL if it's provided
     if (category && category.length > 0) {
       queryParams.push(`category=${category.join(",")}`);
     }
@@ -14,7 +13,6 @@ export const fetchData = createAsyncThunk(
       queryParams.push(`search=${search}`);
     }
 
-    // Include startDate and endDate in the request URL if they're provided
     if (startDate) {
       queryParams.push(`startDate=${startDate}`);
     }
@@ -22,7 +20,6 @@ export const fetchData = createAsyncThunk(
       queryParams.push(`endDate=${endDate}`);
     }
 
-    // Construct the full URL with query parameters
     if (queryParams.length > 0) {
       baseUrl += `?${queryParams.join("&")}`;
     }
